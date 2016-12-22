@@ -18,7 +18,7 @@ import id.ac.its.depandi.dynamic_srs.gui.about.FormAbout;
 import id.ac.its.depandi.dynamic_srs.gui.srs.FormSRS;
 import id.ac.its.depandi.dynamic_srs.gui.user.FormViewUser;
 
-public class FormHome extends JFrame {
+public class FormHomex extends JFrame {
 
 	private JPanel contentPane;
 	
@@ -31,14 +31,14 @@ public class FormHome extends JFrame {
 	
 	private User theUser;
 
-	public FormHome(User theUser){
+	public FormHomex(User theUser){
 		this();
 		this.theUser = theUser;
 	}
 	/**
 	 * Create the frame.
 	 */
-	public FormHome() {
+	public FormHomex() {
 		setTitle("Home Menu");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 632, 291);

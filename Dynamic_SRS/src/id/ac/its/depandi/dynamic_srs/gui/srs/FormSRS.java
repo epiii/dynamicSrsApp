@@ -27,7 +27,7 @@ import id.ac.its.depandi.dynamic_srs.create_xml.NonFuncReq;
 import id.ac.its.depandi.dynamic_srs.create_xml.SpesificReq;
 import id.ac.its.depandi.dynamic_srs.create_xml.UseCase;
 import id.ac.its.depandi.dynamic_srs.dao.SrsDAO;
-import id.ac.its.depandi.dynamic_srs.gui.home.FormHome;
+import id.ac.its.depandi.dynamic_srs.gui.home.FormHomex;
 
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JButton;
@@ -145,7 +145,7 @@ public class FormSRS extends JFrame {
 		if (JOptionPane.showConfirmDialog(this, "Are you sure to close this window?", "Really Closing?",
 				JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
 			dispose();
-			FormHome fHome = new FormHome(theUser);
+			FormHomex fHome = new FormHomex(theUser);
 			fHome.setLoginUserName();
 			fHome.pack();
 			fHome.setLocationRelativeTo(null);

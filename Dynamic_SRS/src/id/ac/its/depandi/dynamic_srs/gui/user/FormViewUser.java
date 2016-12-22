@@ -8,7 +8,7 @@ import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 import id.ac.its.depandi.dynamic_srs.core.User;
 import id.ac.its.depandi.dynamic_srs.dao.UserDAO;
-import id.ac.its.depandi.dynamic_srs.gui.home.FormHome;
+import id.ac.its.depandi.dynamic_srs.gui.home.FormHomex;
 import id.ac.its.depandi.dynamic_srs.table_model.UserTableModel;
 
 import javax.swing.JLabel;
@@ -236,7 +236,7 @@ public class FormViewUser extends JFrame {
 	
 	private void loadFHome(){
 		dispose();
-		FormHome fHome = new FormHome(theUser);
+		FormHomex fHome = new FormHomex(theUser);
 		fHome.setLoginUserName();
 		fHome.pack();
 		fHome.setLocationRelativeTo(null);
