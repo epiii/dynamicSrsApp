@@ -29,7 +29,7 @@ import javax.swing.border.EtchedBorder;
 
 import id.ac.its.depandi.dynamic_srs.core.User;
 import id.ac.its.depandi.dynamic_srs.dao.UserDAO;
-import id.ac.its.depandi.dynamic_srs.gui.home.FormHomex;
+import id.ac.its.depandi.dynamic_srs.gui.home.FormHome;
 
 public class FormLogin extends JDialog {
 
@@ -186,7 +186,7 @@ public class FormLogin extends JDialog {
 		if (isValidPassword) {
 			setVisible(false);
 			setProperties();
-			FormHomex fHome = new FormHomex(theUser);
+			FormHome fHome = new FormHome(theUser);
 			fHome.setLoginUserName();
 			fHome.pack();
 			fHome.setLocationRelativeTo(null);

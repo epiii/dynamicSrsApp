@@ -25,6 +25,9 @@ public class SRS {
 	public String getSrs_name() {
 		return srs_name;
 	}
+	public String getUser_name() {
+		return srs_name;
+	}
 	
 	public void setSrs_name(String srs_name) {
 		this.srs_name = srs_name;

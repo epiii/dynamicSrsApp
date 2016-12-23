@@ -15,6 +15,7 @@ import id.ac.its.depandi.dynamic_srs.core.NFR;
 import id.ac.its.depandi.dynamic_srs.core.SFR;
 import id.ac.its.depandi.dynamic_srs.core.SRS;
 import id.ac.its.depandi.dynamic_srs.core.Step;
+import id.ac.its.depandi.dynamic_srs.core.User;
 
 public class SrsDAO {
 
@@ -203,6 +204,12 @@ public class SrsDAO {
 		Step tempStep = new Step(step_id, step_name);
 		return tempStep;
 	}
+	private SRS convertRowToSRS(ResultSet myRs) throws SQLException {
+		int srs_id = myRs.getInt("srs_id");
+		String srs_name = myRs.getString("srs_name");
+		SRS tempSRS= new SRS(srs_id, srs_name);
+		return tempSRS;
+	}
 
 	public List<Step> getStep() {
 		List<Step> listStep = new ArrayList<Step>();
@@ -223,6 +230,42 @@ public class SrsDAO {
 			DAOUtils.close(myStmt, myRs);
 		}
 		return listStep;
+	}
+	
+	public List<SRS> getSrs(boolean admin, int userId) {
+		List<SRS> listSRS= new ArrayList<SRS>();
+		Statement myStmt = null;
+		ResultSet myRs = null;
+		try {
+			myStmt = myConn.createStatement();
+			String sql;
+
+			if (admin)  {sql = "select "
+								+ "s.srs_id, "
+								+ "s.srs_name,"
+								+ "concat(u.first_name,' ',u.last_name)user_name"
+							+ " from srs s "
+								+ " join users u on u.id= s.user_id "
+							+ " order by s.srs_name";
+			}else {
+				sql = "select "
+					+ "s.srs_id, "
+					+ "s.srs_name,"
+					+ "concat(u.first_name,' ',u.last_name)user_name"
+				+ " from srs s "
+					+ " join users u on u.id = s.user_id "
+				+ " Where user_id ="+userId;
+			}
+			myRs = myStmt.executeQuery(sql);
+			while (myRs.next()) {
+				SRS tempSRS= convertRowToSRS(myRs);
+				listSRS.add(tempSRS);
+			}
+		} catch (SQLException e) {
+			System.out.println("Error getSRS: " + e);
+		} finally {
+			DAOUtils.close(myStmt, myRs);
+		}return listSRS;
 	}
 
 	private Cat convertRowToCat(ResultSet myRs) throws SQLException {

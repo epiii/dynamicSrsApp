@@ -16,6 +16,7 @@ import java.awt.event.MouseEvent;
 import id.ac.its.depandi.dynamic_srs.core.User;
 import id.ac.its.depandi.dynamic_srs.gui.about.FormAbout;
 import id.ac.its.depandi.dynamic_srs.gui.srs.FormSRS;
+import id.ac.its.depandi.dynamic_srs.gui.srs.ViewSRS;
 import id.ac.its.depandi.dynamic_srs.gui.user.FormViewUser;
 
 public class FormHome extends JFrame {
@@ -68,6 +69,7 @@ public class FormHome extends JFrame {
 		imgUser = new ImageIcon(getClass().getResource("/id/ac/its/depandi/dynamic_srs/img/user.png"));
 		imgAbout = new ImageIcon(getClass().getResource("/id/ac/its/depandi/dynamic_srs/img/about.png"));
 		
+//		menu : create new srs
 		JLabel lblCreateNewSrs = new JLabel(imgSRS);
 		lblCreateNewSrs.addMouseListener(new MouseAdapter() {
 			@Override
@@ -84,7 +86,20 @@ public class FormHome extends JFrame {
 		lblCreateNewSrs.setText("Create New SRS");
 		panelMenu.add(lblCreateNewSrs);
 		
+//		menu : manage srs
 		JLabel lblManageSrs = new JLabel(imgManageSRS);
+		// tambahan epii
+		lblManageSrs.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				setVisible(false);
+				ViewSRS vSRS = new ViewSRS(theUser);
+				vSRS.setLocationRelativeTo(null);
+				vSRS.setVisible(true);
+			}
+		});
+		// tambahan epii
+		
 		lblManageSrs.setHorizontalTextPosition(JLabel.CENTER);
 		lblManageSrs.setVerticalTextPosition(JLabel.BOTTOM);
 		lblManageSrs.setFont(new Font("Trebuchet MS", Font.BOLD, 12));

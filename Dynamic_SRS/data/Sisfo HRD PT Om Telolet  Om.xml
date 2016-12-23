@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<srs>
+    <Intro>
+        <purpose>pupose telolet	</purpose>
+        <scope>scope telolet</scope>
+        <definition>definiton telolet</definition>
+        <ref>ref telolet</ref>
+        <overview>overview telolet</overview>
+    </Intro>
+    <gen_des>
+        <product_pres>4 d</product_pres>
+        <product_fun>44 d</product_fun>
+        <user_char>444 d</user_char>
+        <gen_cons>4444 d</gen_cons>
+        <assum_defen>4444 d</assum_defen>
+    </gen_des>
+    <appendices></appendices>
+</srs>
